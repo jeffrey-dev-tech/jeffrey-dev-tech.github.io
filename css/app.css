@@ -1,0 +1,85 @@
+/* General Body Styling */
+body {
+    background: rgb(255, 255, 255);
+    margin: 0;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: block;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 3rem; /* Fixed height on desktop */
+    padding: 0.125rem;
+    background-color: #fff;
+    top: 0; /* Ensure it sticks to the top */
+    z-index: 999; /* Ensure it stays above other content */
+  }
+  
+  .navbar :hover{
+    color: lightblue;
+  }
+  /* Navbar UL (Unordered List) */
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexbox for layout */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: center; /* Align items to the left */
+    align-items: center; /* Vertically center items */
+    height: 100%; /* Full height of navbar */
+  }
+  
+  /* Navbar LI (List Items) */
+  .navbar li {
+    display: flex; /* Use flex to control the item */
+    margin-right: 0.5rem; /* Reduced space between items */
+    flex-shrink: 0; /* Prevent items from shrinking */
+    font-family: 'Poppins', sans-serif;
+    font-size: .9rem;
+  }
+  
+  /* Navbar Links */
+  .navbar a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.25rem 1rem; /* Reduced padding inside the <a> tag */
+    display: inline-block;
+    width: auto; /* Prevent links from stretching */
+  }
+  
+  /* Responsive Styles for Mobile (max-width: 600px) */
+  @media (max-width: 600px) {
+    .navbar {
+      height: auto; /* Allow navbar to grow if needed */
+    }
+  
+    /* Stack the navbar items in a column */
+    .navbar ul {
+      flex-direction: column;
+      align-items: stretch; /* Stretch items to fill full width */
+      justify-content: center; /* Vertically center items */
+    }
+  
+    /* List items grow equally in mobile view */
+    .navbar li {
+      margin-right: 0; /* Remove horizontal margin on mobile */
+      margin-bottom: 0.5rem; /* Reduced vertical spacing between items */
+    }
+  
+    /* Make links block-level for full-width on mobile */
+    .navbar a {
+      display: block;
+      padding: 1rem;
+      text-align: center;
+      width: 100%; /* Make links take full width on mobile */
+    }
+  
+    /* Remove margin from the last item */
+    .navbar li:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
