@@ -14,3 +14,20 @@ window.addEventListener('scroll', function () {
 
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const target = document.querySelector('.parent-div');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2 // Trigger when 20% is visible
+    });
+  
+    observer.observe(target);
+  });
+  
