@@ -123,12 +123,6 @@ body {
     padding-top: 4rem; /* Adjusted to ensure content isn't hidden behind the navbar */
   }
 
-  .parent-div {
-   
-    z-index: -1;
-  
-  }
-  
 }
 
 
@@ -143,7 +137,7 @@ body {
 
   .content{
     display: block;
-    padding-top: 2rem; /* So content is not hidden behind the navbar */
+    padding-top: 5rem; /* So content is not hidden behind the navbar */
   }
   
 
