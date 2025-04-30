@@ -1,20 +1,36 @@
 /* General Body Styling */
 body {
-    background: rgb(255, 255, 255);
+    background: rgb(245, 249, 255);
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #0e383d;
   }
   
   /* Navbar */
   .navbar {
-    display: block;
-    position: fixed;
-    width: 100%;
+    display: block; /* Makes the navbar behave like a regular block element */
+    width: auto; /* Makes it span the full width of the screen */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 3rem; /* Fixed height on desktop */
-    padding: 0.125rem;
+    height:auto;
     background-color: #fff;
-    top: 0; /* Ensure it sticks to the top */
-    z-index: 999; /* Ensure it stays above other content */
+    margin-top: 1rem; /* Space above the navbar */
+    border-radius: 15px;
+    position: fixed; /* Keep it fixed at the top */
+    top: 0;
+    left: 50%; /* Position it in the center horizontally */
+    transform: translateX(-50%); /* Offset by half of the width to center it */
+    margin-right: 2rem;
+    transition: top 0.3s; /* Smooth transition when hiding/showing */
+    
+  }
+
+ .title-name{
+    display: inline-block;
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+   padding-right: 20px;
+   color: blueviolet;
   }
   
   .navbar :hover{
@@ -25,7 +41,7 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Flexbox for layout */
+    display: inline-flex; /* Flexbox for layout */
     flex-wrap: nowrap; /* Prevent wrapping */
     justify-content: center; /* Align items to the left */
     align-items: center; /* Vertically center items */
@@ -39,6 +55,7 @@ body {
     flex-shrink: 0; /* Prevent items from shrinking */
     font-family: 'Poppins', sans-serif;
     font-size: .9rem;
+    font-weight:600;
   }
   
   /* Navbar Links */
@@ -50,36 +67,95 @@ body {
     width: auto; /* Prevent links from stretching */
   }
   
-  /* Responsive Styles for Mobile (max-width: 600px) */
-  @media (max-width: 600px) {
-    .navbar {
-      height: auto; /* Allow navbar to grow if needed */
-    }
-  
-    /* Stack the navbar items in a column */
-    .navbar ul {
-      flex-direction: column;
-      align-items: stretch; /* Stretch items to fill full width */
-      justify-content: center; /* Vertically center items */
-    }
-  
-    /* List items grow equally in mobile view */
-    .navbar li {
-      margin-right: 0; /* Remove horizontal margin on mobile */
-      margin-bottom: 0.5rem; /* Reduced vertical spacing between items */
-    }
-  
-    /* Make links block-level for full-width on mobile */
-    .navbar a {
-      display: block;
-      padding: 1rem;
-      text-align: center;
-      width: 100%; /* Make links take full width on mobile */
-    }
-  
-    /* Remove margin from the last item */
-    .navbar li:last-child {
-      margin-bottom: 0;
-    }
+ /* Responsive Styles for Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    height: auto;
+    margin-left: 0;
+    width: 100%;
+    transition: top 0.3s;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 999; /* Add this */
+  }
+
+  .title-name {
+    display: none; /* Hide title name on mobile */
+  }
+
+  /* Stack the navbar items in a column */
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Stretch items to fill full width */
+    justify-content: center; /* Vertically center items */
+    padding-left: 0; /* Ensure no padding for the list */
+    margin: 0; /* Remove any margin */
+  }
+
+  /* List items grow equally in mobile view */
+  .navbar li {
+    margin-right: 0; /* Remove horizontal margin on mobile */
+    margin-bottom: 0.5rem; /* Reduced vertical spacing between items */
+  }
+
+  /* Make links block-level for full-width on mobile */
+  .navbar a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    width: 100%; /* Make links take full width on mobile */
+  }
+
+  /* Remove margin from the last item */
+  .navbar li:last-child {
+    margin-bottom: 0;
+  }
+
+  .content {
+    display: block;
+    padding-top: 4rem; /* Adjusted to ensure content isn't hidden behind the navbar */
+  }
+}
+
+
+  html {
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+  }
+  section {
+    height: 100vh;
+    display: block;
+    padding: 40px;
+  }
+
+  .content{
+    display: block;
+    padding-top: 2rem; /* So content is not hidden behind the navbar */
   }
   
+
+  .footer-content{
+    width: 100%;
+    color: white;
+    background:linear-gradient(164deg, #3e3587, #c7429800);
+    margin: 0;
+    display: inline-flex;
+    padding: 16px;
+    height: 128px;
+    align-items: stretch; /* Stretch items to fill full width */
+    justify-content: center; /* Vertically center items */
+  }
+  .footer-content li{
+    display: inline-flex;
+  }
+  footer ul li a:hover {
+    color: #63cc83; /* hover color */
+    transform: scale(1.05); /* subtle zoom effect */
+  }
+
+  .footer-content a{
+  text-decoration: none;
+  color: white;
+  margin-right: 16px;
+  }
